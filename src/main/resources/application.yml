@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: ff
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/train??useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: rongbopan
+
+  profiles:
+    active: aaa
+
+#tomcat??
+server:
+  port: 8080
+
+#??
+logging:
+  level:
+    com.example.ff: debug
+    org.springframework: info
+
+mybatis:
+  type-aliases-package: com.example.ff.pojo
+  configuration:
+    log-impl: org.apache.ibatis.logging.commons.JakartaCommonsLoggingImpl
