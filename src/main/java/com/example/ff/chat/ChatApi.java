@@ -1,9 +1,7 @@
 package com.example.ff.chat;
 
-import dev.langchain4j.model.chat.ChatLanguageModel;
-import dev.langchain4j.model.openai.OpenAiChatModel;
+
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,12 +10,4 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController //声明为REST控制器，返回值自动转为json/xml
 public class ChatApi {
 
-
-
-    @GetMapping("/low/chat")
-    public String lowChat(){
-        ChatLanguageModel model = OpenAiChatModel.builder().baseUrl("").apiKey("").modelName("").build() ;
-
-        return model.chat("你好")  ; 
-    }
 }
