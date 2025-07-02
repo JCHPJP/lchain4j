@@ -14,4 +14,10 @@ logging:
   level:
     com.example.ff: debug
     org.springframework: info
+#
+#langchain4j:
+#  community:
+#    chat-modle:
+#      api-key :
+#      model-name :
 
