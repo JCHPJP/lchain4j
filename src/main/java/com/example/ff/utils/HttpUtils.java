@@ -34,17 +34,6 @@ import org.apache.http.message.BasicNameValuePair;
 
 public class HttpUtils {
 
-    /**
-     * get
-     *
-     * @param host
-     * @param path
-     * @param method
-     * @param headers
-     * @param querys
-     * @return
-     * @throws Exception
-     */
     public static HttpResponse doGet(String host, String path, String method,
                                      Map<String, String> headers,
                                      Map<String, String> querys)
@@ -59,18 +48,7 @@ public class HttpUtils {
         return httpClient.execute(request);
     }
 
-    /**
-     * post form
-     *
-     * @param host
-     * @param path
-     * @param method
-     * @param headers
-     * @param querys
-     * @param bodys
-     * @return
-     * @throws Exception
-     */
+
     public static HttpResponse doPost(String host, String path, String method,
                                       Map<String, String> headers,
                                       Map<String, String> querys,
@@ -97,18 +75,6 @@ public class HttpUtils {
         return httpClient.execute(request);
     }
 
-    /**
-     * Post String
-     *
-     * @param host
-     * @param path
-     * @param method
-     * @param headers
-     * @param querys
-     * @param body
-     * @return
-     * @throws Exception
-     */
     public static HttpResponse doPost(String host, String path, String method,
                                       Map<String, String> headers,
                                       Map<String, String> querys,
@@ -128,18 +94,7 @@ public class HttpUtils {
         return httpClient.execute(request);
     }
 
-    /**
-     * Post stream
-     *
-     * @param host
-     * @param path
-     * @param method
-     * @param headers
-     * @param querys
-     * @param body
-     * @return
-     * @throws Exception
-     */
+
     public static HttpResponse doPost(String host, String path, String method,
                                       Map<String, String> headers,
                                       Map<String, String> querys,
@@ -159,17 +114,7 @@ public class HttpUtils {
         return httpClient.execute(request);
     }
 
-    /**
-     * Put String
-     * @param host
-     * @param path
-     * @param method
-     * @param headers
-     * @param querys
-     * @param body
-     * @return
-     * @throws Exception
-     */
+
     public static HttpResponse doPut(String host, String path, String method,
                                      Map<String, String> headers,
                                      Map<String, String> querys,
@@ -189,17 +134,7 @@ public class HttpUtils {
         return httpClient.execute(request);
     }
 
-    /**
-     * Put stream
-     * @param host
-     * @param path
-     * @param method
-     * @param headers
-     * @param querys
-     * @param body
-     * @return
-     * @throws Exception
-     */
+
     public static HttpResponse doPut(String host, String path, String method,
                                      Map<String, String> headers,
                                      Map<String, String> querys,
@@ -219,17 +154,6 @@ public class HttpUtils {
         return httpClient.execute(request);
     }
 
-    /**
-     * Delete
-     *
-     * @param host
-     * @param path
-     * @param method
-     * @param headers
-     * @param querys
-     * @return
-     * @throws Exception
-     */
     public static HttpResponse doDelete(String host, String path, String method,
                                         Map<String, String> headers,
                                         Map<String, String> querys)
