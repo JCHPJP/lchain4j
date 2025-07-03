@@ -8,9 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
+
 
 @RestController
 public class DeepSeek {
@@ -27,7 +29,8 @@ public class DeepSeek {
         return model.chat(message);
     }
 
-    @GetMapping(value = "/stream" , produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+
+    @GetMapping(value = "/stream" , produces = MediaType.TEXT_PLAIN_VALUE)
     public Flux<String> streamChat(@RequestParam String message) {
         return Flux.create(sink -> {
             streamingChatModel.chat(message, new StreamingChatResponseHandler() {
@@ -36,7 +39,6 @@ public class DeepSeek {
                     sink.next(s);
                     System.out.print(s);
                 }
-
                 @Override
                 public void onCompleteResponse(ChatResponse chatResponse) {
                     sink.complete();
